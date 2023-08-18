@@ -1,3 +1,4 @@
+name: dispatch-workflows-on-pr-labeled
 
 on:
   pull_request:
