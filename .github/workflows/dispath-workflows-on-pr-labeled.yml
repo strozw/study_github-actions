@@ -4,6 +4,9 @@ on:
     types:
       - labeled
 
+permissions:
+  actions: write
+
 jobs:
   dispatch_workflow1:
     runs-on: ubuntu-latest
