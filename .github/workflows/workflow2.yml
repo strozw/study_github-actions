@@ -9,7 +9,7 @@ on:
         description: ''
 
 jobs:
-  workflow1:
+  workflow2:
     runs-on: ubuntu-latest
     steps:
       - name: Set final commit status
@@ -17,8 +17,8 @@ jobs:
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          sha: ${{ env.GITHUB_SHA }}
-          status: ${{ job.status }}
+          sha: ${{ github.sha }}
+          status: 'pending'
           context: CI workflow2
 
       - run: |
@@ -29,6 +29,6 @@ jobs:
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          sha: ${{ env.GITHUB_SHA }}
+          sha: ${{ github.sha }}
           status: ${{ job.status }}
           context: CI workflow2

@@ -14,11 +14,10 @@ jobs:
     steps:
       - name: Set final commit status
         uses: myrotvorets/set-commit-status-action@master
-        if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          sha: ${{ env.GITHUB_SHA }}
-          status: ${{ job.status }}
+          sha: ${{ github.sha }}
+          status: 'pending'
           context: CI workflow1
 
       - run: |
@@ -29,6 +28,6 @@ jobs:
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          sha: ${{ env.GITHUB_SHA }}
+          sha: ${{ github.sha }}
           status: ${{ job.status }}
           context: CI workflow1
