@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           inputs: |
             { 
-              "message": "blah blah", 
+              "message": "blah blah"
             }
 
   dispatch_workflow2:
@@ -33,5 +33,5 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           inputs: |
             { 
-              "message": "blah blah", 
+              "message": "blah blah"
             }
