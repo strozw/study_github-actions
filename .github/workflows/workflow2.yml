@@ -14,3 +14,11 @@ jobs:
     steps:
       - run: |
           echo "${{ toJson(github.event.inputs) }}"
+
+      - name: Set final commit status
+        uses: myrotvorets/set-commit-status-action@master
+        if: always()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          context: CI workflow2
