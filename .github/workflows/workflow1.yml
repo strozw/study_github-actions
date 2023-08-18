@@ -20,5 +20,6 @@ jobs:
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ env.GITHUB_SHA }}
           status: ${{ job.status }}
           context: CI workflow1
