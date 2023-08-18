@@ -1,0 +1,16 @@
+name: workflow2
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        type: string
+        default: ''
+        description: ''
+
+jobs:
+  workflow1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ toJson(github.event.inputs) }}"
