@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.label.name == 'workflow1'
     steps:
-      - name: Invoke workflow in another repo with inputs
-        uses: benc-uk/workflow-dispatch@v1
+      - uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: workflow1.yml
           ref: ${{ github.event.pull_request.head.ref }}
@@ -26,8 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.label.name == 'workflow2'
     steps:
-      - name: Invoke workflow in another repo with inputs
-        uses: benc-uk/workflow-dispatch@v1
+      - uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: workflow2.yml
           ref: ${{ github.event.pull_request.head.ref }}
