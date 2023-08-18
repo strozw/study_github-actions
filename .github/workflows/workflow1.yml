@@ -8,17 +8,19 @@ on:
         default: ''
         description: ''
 
+permissions:
+  checks: write
+
 jobs:
   workflow1:
     runs-on: ubuntu-latest
     steps:
       - name: Set final commit status
         uses: myrotvorets/set-commit-status-action@master
-        if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ github.sha }}
-          status: ${{ job.status }}
+          status: 'pending'
           context: CI workflow1
 
       - run: |
